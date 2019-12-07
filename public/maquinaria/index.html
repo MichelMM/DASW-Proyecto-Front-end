@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Maquinaria</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(154, 33, 32);">
+        <a class="navbar-brand" href="./principal">Principal</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="./perfil">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mensajes<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form>
+                <a class="nav-link" href="./home">Cerrar Sesión</a>
+            </form>
+        </div>
+        <div class="dropdown-menu">
+            <h6 class="dropdown-header">Dropdown header</h6>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+        </div>
+    </nav>
+    <hr style="background-color: white;">
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                    href="#list-home" role="tab" aria-controls="home">Maquina</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                    href="#list-profile" role="tab" aria-controls="profile">Especificaciones</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                    href="#list-messages" role="tab" aria-controls="messages">Operadores</a>
+                <a class="list-group-item list-group-item-action" id="list-contract-list" data-toggle="list"
+                    href="#list-contract" role="tab" aria-controls="settings">Contratar</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" id="list-contract" role="tabpanel" aria-labelledby="list-contract-list">
+                    <form id="formContratacion">
+                        <div class="form-row">
+                            <p><b>Datos de Maquinaria:</b></p>
+                        </div>
+                        <div class="form-row">
+                            <form action="">
+                                <div class="form-group col-auto">
+                                    <label for="MACHname">Nombre</label>
+                                    <input type="text" class="form-control" id="MACHname" disabled>
+                                </div>
+                                <div class="form-group col-auto">
+                                    <label for="MACHdealer">Fabricante</label>
+                                    <input type="text" class="form-control" id="MACHdealer" disabled>
+                                </div>
+                                <div class="form-group col-auto">
+                                    <label for="MACHmodel">Modelo</label>
+                                    <input type="text" class="form-control" id="MACHmodel" disabled>
+                                </div>
+                        </div>
+                        <div class="form-row">
+                            <p><b>Datos del contratista</b></p>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-auto">
+                                <label for="contName">Nombre</label>
+                                <input type="text" class="form-control" id="contName" disabled>
+                            </div>
+                            <div class="form-group col-auto">
+                                    <label for="comName">Compañia</label>
+                                    <input type="text" class="form-control" id="comName" disabled>
+                                </div>
+                            <div class="form-group col-auto">
+                                <label for="contState">Estado</label>
+                                <input type="text" class="form-control" id="contState" disabled>
+                            </div>
+                            <div class="form-group col-auto">
+                                <label for="contCity">Ciudad</label>
+                                <input type="text" class="form-control" id="contCity" disabled>
+                            </div>
+                            <div class="form-group col-auto">
+                                <label for="payInfo">Información de pago</label>
+                                <input type="text" class="form-control" id="payInfo" disabled>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <p><b>Datos sobre la contratación</b></p>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-auto">
+                                <label for="beginDate">Fecha de inicio</label>
+                                <input type="date" class="form-control" id="beginDate" required>
+                            </div>
+                            <div class="form-group col-auto">
+                                <label for="endDate">Fecha de finalización</label>
+                                <input type="date" class="form-control" id="endDate" required>
+                            </div>
+                            <div class="form-group col-auto">
+                                <label for="payDate">Día de pago</label>
+                                <input type="date" class="form-control" id="payDate" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-rounded btn-success"
+                            id=btnContratar>Contratar</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    <table width=100%>
+                        <tr>
+                            <td rowspan="5" width="20%"><img width="200px" src="" alt="" id="img"></td>
+                            <td align="left" width="50%">
+                                <ul class="list-group">
+                                    <i class="list-group-item"> <b id="type">Nombre: </b> </i>
+                                    <li class="list-group-item"><b id="dealer">Fabricante: </b></li>
+                                    <li class="list-group-item"><b id="model">Modelo: </b></li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                    <table>
+                        <tr>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item"> <b id="description">Breve Descripción: </b> </li>
+
+                                    <li class="list-group-item"> <b>Documentación: </b><a
+                                            href="http://maquqam.com/tecnicas/carreteras-3337/caterpillar/cs431c.html"
+                                            id="specifications">Document</a>
+                                    </li>
+                            </td>
+                            <td width="20%">
+
+                            </td>
+                        </tr>
+                    </table>
+
+                    </ul>
+
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                    <table>
+                        <tr>
+                            <td>
+                                <li class="list-group-item"> <b>Operadores</b></li>
+                                <li class="list-group-item">
+                                    <table width=100% id="table">
+                                        <tr>
+                                            <td rowspan="5"><img width="200px"
+                                                    src="http://www.jdevoto.cl/web/wp-content/uploads/2018/04/default-user-img.jpg"
+                                                    alt=""></td>
+                                            <td>Nombre:</td>
+                                            <td>nombre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sabe operar:</td>
+                                            <td>retroexcavadora,motoniveladora,aplanadora</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Años de Experiencia:</td>
+                                            <td>5 años y medio</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Busco Trabajo:</td>
+                                            <td>Temporal/fijo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Calificación:</td>
+                                            <td>Aqui van las estrellitas</td>
+                                            <td><button type="button" class="btn btn-primary" data-toggle="button"
+                                                    aria-pressed="false" autocomplete="off">Ver</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="5"><img width="200px"
+                                                    src="http://www.jdevoto.cl/web/wp-content/uploads/2018/04/default-user-img.jpg"
+                                                    alt=""></td>
+                                            <td>Nombre:</td>
+                                            <td>nombre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sabe operar:</td>
+                                            <td>aplanadora</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Años de Experiencia:</td>
+                                            <td>2 años </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Busco Trabajo:</td>
+                                            <td>Temporal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Calificación:</td>
+                                            <td>Aqui van las estrellitas</td>
+                                            <td><button type="button" class="btn btn-primary" data-toggle="button"
+                                                    aria-pressed="false" autocomplete="off">Ver</button></td>
+                                        </tr>
+                                </li>
+                            </td>
+
+                            <td width="5%">
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="resultado operador">
+        <hr style="background-color: white;">
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="./maquinaria.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

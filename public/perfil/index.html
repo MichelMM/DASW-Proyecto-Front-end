@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Mi Perfil</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(154, 33, 32);">
+                <a class="navbar-brand" href="./principal">Menú</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./perfil">Perfil<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./mensajes">Mensajes</a>
+                        </li>
+                    </ul>
+                    <form>
+                        <a class="nav-link" href="./home">Cerrar Sesión</a>
+                    </form>
+                </div>
+            </nav>
+    <div id="rowContratista" class="row" hidden>
+        <!-- left column -->
+        <div class="col-md-3">
+            <div id="ContratistaIMG"></div>
+            <div class="text-center">
+                <h6>Cargar una foto...</h6>
+                <input id="img" type="url" class="form-control col-auto" placeholder="Imagen">
+            </div>
+        </div>
+        <!-- form grid -->
+        <form id="formContratista">
+            <div class="form-row">
+                <p><b>Datos de Personales</b></p>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-auto">
+                    <label for="inputName">Nombre</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Nombre" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputApellido">Apellido(s)</label>
+                    <input type="text" class="form-control" id="inputApellido" placeholder="Apellido(s)" required>
+                </div>
+                <div class="form-group co--auto">
+                    <label for="inputTel">Teléfono</label>
+                    <input type="tel" name="phone" class="form-control" id="phone" pattern="[0-9]{10}" required
+                        placeholder="10 Dígitos">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputEmail3">Email</label>
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="email@gmail.com" disabled required>
+                </div>
+            </div>
+            <div class="form-row">
+                <p><b>Dirección Personal</b></p>
+            </div>
+            <div class="form-row" id="PersonalAddress">
+                <div class="form-group col-auto">
+                    <label for="Pstreet">Calle</label>
+                    <input type="text" class="form-control" id="Pstreet" placeholder="Calle y Número" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="">Ciudad</label>
+                    <select class="form-control" name="" id="Pcity" required>
+                        <option>Guadalajara</option>
+                        <option>Monterrey</option>
+                        <option>CDMX</option>
+                    </select>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="PCP">Código Postal</label>
+                    <input type="text" pattern="[0-9]{5}" class="form-control" id="PCP" placeholder="Código Postal"
+                        required>
+                </div>
+            </div>
+            <div class="form-row">
+                <p><b>Datos de Compañia</b></p>
+            </div>
+            <div class="form-row" id="CompanyAddress">
+                <div class="form-group col-auto">
+                    <label for="Cname">Nombre de Compañia</label>
+                    <input type="text" class="form-control" id="Cname" placeholder="Compañia" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="Cstreet">Calle</label>
+                    <input type="text" class="form-control" id="Cstreet" placeholder="Calle y Número" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="">Ciudad</label>
+                    <select class="form-control" name="" id="Ccity" required>
+                        <option>Guadalajara</option>
+                        <option>Monterrey</option>
+                        <option>CDMX</option>
+                    </select>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="CCP">Código Postal</label>
+                    <input type="text" pattern="[0-9]{5}" class="form-control" id="CCP" placeholder="Código Postal"
+                        required>
+                </div>
+            </div>
+            <div class="form-row">
+                <p><b>Otros Datos</b></p>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-auto">
+                    <label for="payInfo">Información de Pago</label>
+                    <input type="text" class="form-control" id="payInfo" placeholder="Información de Pago" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="RFC">RFC</label>
+                    <input type="text" class="form-control" id="RFC" placeholder="RFC" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="Cpassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="Cpassword1" placeholder="password"
+                        title="At least 6 characters with letters and numbers" required>
+                </div>
+            </div>
+
+            <button id="EditContratista" type="submit" class="btn btn-primary">Editar</button>
+            <button id="DeleteContratista" type="submit" class="btn btn-primary btn-danger">Eliminar mi Perfil</button>
+        
+        </form>
+
+
+    </div>
+    <div id="rowOperador" class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div id="OperatorImage"></div>
+            <div class="text-center">
+                <h6>Cargar una foto...</h6>
+                <input type="url" class="form-control" id="operatorIMG" placeholder="Imagen" required>
+            </div>
+        </div>
+        <!-- form grid -->
+        <form id="formOperador" >
+            <div class="form-row">
+                <p><b>Datos de Personales</b></p>
+            </div>
+            <div class="form-row">
+                <form id="formOperador" action="">
+                    <div class="form-group col-auto">
+                        <label for="OPinputName">Nombre</label>
+                        <input type="text" class="form-control" id="OPinputName" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group col-auto">
+                        <label for="OPinputApellido">Apellido(s)</label>
+                        <input type="text" class="form-control" id="OPinputApellido" placeholder="Apellido(s)" required>
+                    </div>
+                    <div class="form-group col-auto">
+                        <label for="OPinputEmail3">Email</label>
+                        <input type="email" class="form-control" id="OPinputEmail3" placeholder="email@gmail.com"
+                            disabled required>
+                    </div>
+                    <div class="form-group col-auto">
+                        <label for="OPphone">Teléfono</label>
+                        <input type="tel" name="phone" class="form-control" id="OPphone" pattern="[0-9]{10}" required
+                            placeholder="10 Dígitos">
+                    </div>
+            </div>
+            <div class="form-row">
+                <p><b>URL Documentos</b></p>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-auto">
+                    <label for="licensePDF">Licencia de Operador</label>
+                    <input type="url" class="form-control" id="licensePDF" placeholder="Licencia" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="officialID">Identificación oficial</label>
+                    <input type="url" class="form-control" id="officialID" placeholder="Licencia" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="noCRB">Antecedentes Penales</label>
+                    <input type="url" class="form-control" id="noCRB" placeholder="Antecedentes Penales" required>
+                </div>
+                <div class="form-group col-auto">
+                        <label for="recomendation">Carta Recomendación</label>
+                        <input type="url" class="form-control" id="recomendation" placeholder="Carta de recomendación"  required>
+                    </div>
+            </div>
+            <div class="form-row">
+                <p><b>Otros Datos</b></p>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-auto">
+                    <label for="">Ciudad</label>
+                    <select class="form-control" name="" id="OPcity" required>
+                        <option >Guadalajara</option>
+                        <option>Monterrey</option>
+                        <option>CDMX</option>
+                    </select>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="OPRFC">RFC</label>
+                    <input type="text" class="form-control" id="OPRFC" required>
+                </div>
+                <div class="form-group col-auto">
+                    <label for="OPavailable">Disponibilidad</label>
+                    <select id="OPavailable" class="form-control">
+                        <option value="Por hora">Por Hora</option>
+                        <option value="Por día">Por Día</option>
+                        <option value="Por semana">Por Semana</option>
+                        <option value="Por mes">Por Mes</option>
+                        <option value="Por año">Por Año</option>
+                    </select>
+                </div>
+                <div class="form-group col-5">
+                    <label for="experience" class="col-7 col-form-label">Años de experiencia</label>
+                    <input class="form-control" type="number" placeholder="Años de experiencia" id="experience">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-auto">
+                    <label for="OPinputPassword3">Contraseña</label>
+                    <input type="password" class="form-control" id="OPpassword1" placeholder="password"
+                        title="At least 6 characters with letters and numbers" required>
+                </div>
+            </div>
+            <div class="form-row">
+                    <p><b>Descripción</b></p>
+            </div>
+            <div class="form-row">
+                    <label for="description"></label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+                <p><b>Antecedentes Laborales</b></p>
+            </div>
+            <div style="background:rgb(240, 236, 236)" class="form-row rounded">
+                    <div class="form-group col-10">
+                        <b>Trabajo Previo 1</b>
+                        
+                     </div>
+                <div class="form-group col-auto">
+                    <label for="job1">Compañia</label>
+                    <input type="text" class="form-control" id="job1" placeholder="Nombre de Compañia" >
+                </div>
+                <div class="form-group col-auto">
+                    <label for="jobc1">Contacto de Referencia</label>
+                    <input type="text" class="form-control" id="jobc1" placeholder="Nombre" >
+                </div>
+                <div class="form-group col-auto">
+                        <label for="jobtel1">Teléfono</label>
+                        <input type="tel" name="phone" class="form-control" id="jobtel1" pattern="[0-9]{10}" 
+                            placeholder="10 Dígitos">
+                </div>
+            </div>
+            <hr>
+            <div style="background:rgb(240, 236, 236)" class="form-row rounded">
+                    <div class="form-group col-10">
+                        <b>Trabajo Previo 2</b>
+                     </div>
+                <div class="form-group col-auto">
+                    <label for="job2">Compañia</label>
+                    <input type="text" class="form-control" id="job2" placeholder="Nombre de Compañia" >
+                </div>
+                <div class="form-group col-auto">
+                    <label for="jobc2">Contacto de Referencia</label>
+                    <input type="text" class="form-control" id="jobc2" placeholder="Nombre" >
+                </div>
+                <div class="form-group col-auto">
+                        <label for="jobtel2">Teléfono</label>
+                        <input type="tel" name="phone" class="form-control" id="jobtel2" pattern="[0-9]{10}" 
+                            placeholder="10 Dígitos">
+                </div>
+            </div>
+            <hr>
+            <div style="background:rgb(250, 248, 248)" class="form-row rounded">
+                    <div class="form-group col-10">
+                        <b>Trabajo Previo 3</b>
+                     </div>
+                <div class="form-group col-auto">
+                    <label for="job3">Compañia</label>
+                    <input type="text" class="form-control" id="job3" placeholder="Nombre de Compañia" >
+                </div>
+                <div class="form-group col-auto">
+                    <label for="jobc3">Contacto de Referencia</label>
+                    <input type="text" class="form-control" id="jobc3" placeholder="Nombre" >
+                </div>
+                <div class="form-group col-auto">
+                        <label for="jobtel3">Teléfono</label>
+                        <input type="tel" name="phone" class="form-control" id="jobtel3" pattern="[0-9]{10}" 
+                            placeholder="10 Dígitos">
+                </div>
+            </div>
+            <hr>
+            <div class="form-row">
+                    <p><b>Agregar Máquina</b></p>
+            </div>
+            <div class="form-group col-auto">
+                    <label for="newMachine">Número de serie de nueva máquina</label>
+                    <input type="text" class="form-control" id="newMachine" placeholder="Número de Serie" >
+                </div>
+
+            <button id="EditOperador" type="submit" class="btn btn-primary">Editar</button>
+            <button id="DeleteOperador" type="submit" class="btn btn-primary btn-danger">Eliminar mi Perfil</button>
+        </form>
+
+
+    </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./perfil.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

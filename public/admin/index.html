@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Admin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(154, 33, 32);">
+        <a class="navbar-brand" href="./admin">Vista de Administrador</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            </ul>
+            <form>
+                <a class="nav-link" href="./home">Cerrar Sesión</a>
+            </form>
+        </div>
+        <div class="dropdown-menu">
+            <h6 class="dropdown-header">Dropdown header</h6>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+        </div>
+    </nav>
+    <div class="row select">
+
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-operador-list" data-toggle="list"
+                    href="#list-home" role="tab" aria-controls="home">Operadores</a>
+                <a class="list-group-item list-group-item-action" id="list-contratista-list" data-toggle="list"
+                    href="#list-profile" role="tab" aria-controls="profile">Contratistas</a>
+                <a class="list-group-item list-group-item-action" id="list-maquinaria-list" data-toggle="list"
+                    href="#list-messages" role="tab" aria-controls="messages">Maquinaria</a>
+                <a class="list-group-item list-group-item-action" id="list-contrataciones-list" data-toggle="list"
+                    href="#list-settings" role="tab" aria-controls="settings">Contrataciones Operadores</a>
+                <a class="list-group-item list-group-item-action" id="list-contract-list" data-toggle="list"
+                    href="#list-contract" role="tab" aria-controls="settings">Contrataciones Maquinaria</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" id="list-contract" role="tabpanel" aria-labelledby="list-contract-list">
+                    <div>
+                        <nav class="navbar navbar-expand navbar-light bg-faded filtros">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <div class="form-group ">
+                                    <label for="date" class="text-heading h6 font-weight-semi-bold">Fecha de
+                                        Contratacion</label>
+                                    <input type="text" name="date" class="form-control" placeholder="YYYY-MM-DD"
+                                        id="datetimepicker1">
+                                </div>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                    onclick="buscarContMa()">Buscar</button>
+                            </form>
+                        </nav>
+                    </div>
+                    <div id="divContratacionesMaquinaria">
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                    aria-labelledby="list-operador-list">
+                    <div>
+                        <nav class="navbar navbar-expand navbar-light bg-faded filtros">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <div class="form-group">
+                                    <label for="Searchname"></label>
+                                    <input id="operadorSearch" type="text" class="form-control" name="" id="Searchname"
+                                        aria-describedby="helpId" placeholder="Nombre de Operador">
+                                </div>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                    onclick="buscarOperador()">Buscar</button>
+                            </form>
+                        </nav>
+                    </div>
+                    <div id="divOperadores"></div>
+                </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-contratista-list">
+                    <div>
+                        <nav class="navbar navbar-expand navbar-light bg-faded filtros">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <div class="form-group">
+                                    <label for="Searchname"></label>
+                                    <input type="text" class="form-control" name="" id="SearchContratista"
+                                        aria-describedby="helpId" placeholder="Nombre de la Empresa">
+                                </div>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <button class="btn btn-outline-success my-2 my-sm-0" onclick="buscarContratista()"
+                                    type="submit">Buscar</button>
+                            </form>
+                        </nav>
+                    </div>
+                    <div id="divContratistas"></div>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-maquinaria-list">
+                    <nav class="navbar navbar-expand navbar-light bg-faded filtros">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <div class="form-group">
+                                <label for=""></label>
+                                <input type="text" class="form-control" name="" id="SearchFabricante"
+                                    aria-describedby="helpId" placeholder="Fabricante">
+                            </div>
+                            <div class="form-group">
+                                <label for=""></label>
+                                <input type="text" class="form-control" name="" id="SearchModelo"
+                                    aria-describedby="helpId" placeholder="Modelo">
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-success my-2 my-sm-0" href="./registrarMaquina">Agregar
+                                    nueva maquinaria</a>
+                            </div>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                onclick="buscarMaquinaria()">Buscar</button>
+                        </form>
+                    </nav>
+                    <div id="divMaquinarias"></div>
+                </div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel"
+                    aria-labelledby="list-contrataciones-list">
+                    <div>
+                        <nav class="navbar navbar-expand navbar-light bg-faded filtros">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <div class="form-group ">
+                                    <label for="date" class="text-heading h6 font-weight-semi-bold">Fecha de
+                                        Contratacion</label>
+                                    <div class="input-group date" data-provide="datepicker">
+                                        <input type="text" name="date" class="form-control" placeholder="YYYY-MM-DD"
+                                            id="datetimepicker2">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="button">
+                                                <i class="fa fa-calendar text-primary" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                    onclick="buscarContOp()">Buscar</button>
+                            </form>
+                        </nav>
+                    </div>
+                    <div id="divContratacionesOperador">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <script src="/admin.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
